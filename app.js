@@ -9,16 +9,16 @@ app.get("/",(req,res)=>{
     res.send("hi i am live")
 })
 
-// app.use("/api/products",products_routes)
+app.use("/api/products",products_routes)
 
-// const cors=require("cors");
-// const corsOptions ={
-//    origin:'*', 
-//    credentials:true,            //access-control-allow-credentials:true
-//    optionSuccessStatus:200,
-// }
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
 
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 
 
