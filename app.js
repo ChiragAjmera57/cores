@@ -3,7 +3,7 @@ const express = require('express')
 const app = express();
 const connectDB = require("./db/connect");
 
-const PORT = process.env.PORT||6000;
+const PORT = process.env.PORT||5000;
 const products_routes = require("./routes/products")
 app.get("/",(req,res)=>{
     res.send("hi i am live")
@@ -12,14 +12,13 @@ app.get("/",(req,res)=>{
 app.use("/api/products",products_routes)
 
 const cors=require("cors");
-// const corsOptions ={
-//    origin:'*', 
-//    credentials:true,            //access-control-allow-credentials:true
-//    optionSuccessStatus:200,
-// }
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
 
-
-app.use(cors({origin:true}))
+app.use(cors(corsOptions))
 
 
 
