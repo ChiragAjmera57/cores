@@ -13,8 +13,8 @@ app.use("/api/products",products_routes)
 
 const cors=require("cors");
 const corsOptions ={
-   origin:'*', 
-   credentials:true,            //access-control-allow-credentials:true
+   origin: true, 
+   credentials:false,            //access-control-allow-credentials:true
    optionSuccessStatus:200,
 }
 
